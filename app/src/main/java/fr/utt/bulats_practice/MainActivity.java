@@ -13,13 +13,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import fr.utt.bulats_practice.utils.SQLiteHandler;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private SQLiteHandler db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        db = new SQLiteHandler(getApplicationContext());
+        db.insertCSVData(getResources().openRawResource(R.raw.sentence), "sentence");
+        db.insertCSVData(getResources().openRawResource(R.raw.answer), "sentence");
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
