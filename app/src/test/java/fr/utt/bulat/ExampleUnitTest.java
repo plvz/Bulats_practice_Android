@@ -1,4 +1,4 @@
-package fr.utt.bulats_practice;
+package fr.utt.bulat;
 
 import org.junit.Test;
 

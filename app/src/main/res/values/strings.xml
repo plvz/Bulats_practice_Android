@@ -1,8 +1,32 @@
 <resources>
-    <string name="app_name">Bulats_practice</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_settings">Settings</string>
+    <string name="app_name">BULAT 2.0 </string>
+    <string name="quiz_slogan">Best way to learn through quiz</string>
+    <string name="select_quiz">SELECT QUIZ</string>
+    <string name="quiz_instruction">QUIZ INSTRUCTION</string>
+    <string name="your_best_score">YOUR BEST SCORE</string>
+    <string name="quiz_user_score_table">QUIZ TOP SCORERS</string>
+    <string name="total_best_score">93%</string>
+    <string name="word_quiz_category">Right Word Category</string>
+    <string name="picture_quiz_category">Extra Word Category</string>
+    <string name="extra_word_category">Extra Word Category</string>
+    <string name="sports">Sport Category</string>
+    <string name="question_title">Question</string>
+    <string name="question">What is the highest mountain in the world right now?</string>
+    <string name="everest">Mount Everest</string>
+    <string name="next_button">NEXT QUESTION</string>
+    <string name="pass">PASS</string>
+    <string name="fail">FAIL</string>
+    <string name="quiz_result">Quiz Result</string>
+    <string name="retake_quiz">Retake quiz</string>
+    <string name="view_result">View result</string>
+    <string name="question_num">Question 12</string>
+    <string name="your_answer">Your answer</string>
+    <string name="correct_answer">Correct answer</string>
+    <string name="quiz_result_analysis">Quiz Result Analysis</string>
+    <string name="no_quiz_in_category">There is no quiz in this category. Add a new quiz</string>
+    <string name="text_quiz">Right Word Category</string>
+    <string name="picture_quiz">Extra Word Category</string>
+    <string name="quiz_information_notice">Quiz Instruction</string>
+    <string name="question_count">Question 1</string>
+    <string name="picture_image">This Mazda car was manufactured which year?</string>
 </resources>
