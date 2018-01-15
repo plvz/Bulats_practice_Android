@@ -9,6 +9,8 @@ import android.widget.Button;
 
 import com.github.pavlospt.CircleView;
 
+import fr.utt.bulat.database.DatabaseQuery;
+
 public class QuizResultActivity extends AppCompatActivity {
 
     @Override

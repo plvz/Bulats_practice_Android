@@ -42,7 +42,8 @@ public class QuizCategoryAdapter extends RecyclerView.Adapter<QuizCategoryViewHo
         CategoryObject catObject = quizCategoryObject.get(position);
         final String catName = quizCategoryObject.get(position).getQuizCategoryName();
         final int id = catObject.getId();
-        holder.categoryName.setText(catName);
+        final String customCatnam= catName+""+(position+1);
+        holder.categoryName.setText(customCatnam);
 
         int imageResource = getResourseId(context, catObject.getQuizCategoryImagePath(), "drawable", context.getPackageName());
         holder.categoryImage.setImageResource(imageResource);
@@ -56,7 +57,7 @@ public class QuizCategoryAdapter extends RecyclerView.Adapter<QuizCategoryViewHo
                 }else if(quizType == 2){
                     quizTypeIntent = new Intent(context, MainExtraWordActivity.class);
                 }
-                quizTypeIntent.putExtra("QUIZ_CATEGORY_NAME", catName);
+                quizTypeIntent.putExtra("QUIZ_CATEGORY_NAME", customCatnam);
                 quizTypeIntent.putExtra("QUIZ_CATEGORY_ID", id);
                 context.startActivity(quizTypeIntent);
             }

@@ -51,5 +51,12 @@ public class DatabaseQuery extends DatabaseObject{
         cursor.close();
         return quizQuestionList;
     }
+    public void ValidateExercise(int id){
+        List<QuestionObject> quizQuestionList = new ArrayList<QuestionObject>();
+        String query = "UPDATE category SET image = 'checked' WHERE id =" +  id;
+        Cursor c= this.getDbConnection().rawQuery(query, null);
 
+        c.moveToFirst();
+        c.close();
+    }
 }

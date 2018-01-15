@@ -53,7 +53,7 @@ public class MainQuizActivity extends AppCompatActivity {
 
         String categoryName = getIntent().getExtras().getString("QUIZ_CATEGORY_NAME");
         if(!TextUtils.isEmpty(categoryName)){
-            setTitle("Quiz on " + categoryName);
+            setTitle("" + categoryName);
         }
 
         mScore = new ScoreObject();
@@ -115,11 +115,14 @@ public class MainQuizActivity extends AppCompatActivity {
 
                             double percentageScore = (mScore.getScore() * 100) / totalQuizCount ;
                             quizOverIntent.putExtra("TOTAL_SCORE", String.valueOf(percentageScore));
-
                             // compare score and save
                             MySharedPreference sharedPreference = new MySharedPreference(MainQuizActivity.this);
                             Double mDouble = new Double(percentageScore);
                             int presentScore = mDouble.intValue();
+                            if(percentageScore >99){
+                                DatabaseQuery query = new DatabaseQuery(MainQuizActivity.this);
+                                query.ValidateExercise(getIntent().getExtras().getInt("QUIZ_CATEGORY_ID"));
+                            }
                             if(!sharedPreference.isHighestScore(presentScore)){
                                 sharedPreference.saveQuizHighestQuizScore(presentScore);
                             }
