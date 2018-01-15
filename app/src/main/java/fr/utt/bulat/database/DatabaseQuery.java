@@ -52,11 +52,31 @@ public class DatabaseQuery extends DatabaseObject{
         return quizQuestionList;
     }
     public void ValidateExercise(int id){
-        List<QuestionObject> quizQuestionList = new ArrayList<QuestionObject>();
         String query = "UPDATE category SET image = 'checked' WHERE id =" +  id;
         Cursor c= this.getDbConnection().rawQuery(query, null);
 
         c.moveToFirst();
         c.close();
+    }
+    public void resetAll(){
+        String query = "DELETE FROM category" ;
+        Cursor c= this.getDbConnection().rawQuery(query, null);
+        c.moveToFirst();
+        c.close();
+        String query1 = "INSERT INTO `category` (id,name,image,quiz_type) VALUES (1,'Exercice ','education',0),\n" +
+                " (2,'Exercice ','politics',0),\n" +
+                " (3,'Exercice ','geography',0),\n" +
+                " (4,'Exercice ','business',1),\n" +
+                " (5,'Exercice ','history',1),\n" +
+                " (6,'Exercice ','education',1),\n" +
+                " (7,'Exercice ','celebrity',2),\n" +
+                " (8,'Exercice ','personality',2),\n" +
+                " (9,'Exercice ','animals',2),\n" +
+                " (10,'Exercice ','cars',2),\n" +
+                " (11,'Exercice ','logo',2),\n" +
+                " (12,'Exercice ','fruits',2);" ;
+        Cursor c1= this.getDbConnection().rawQuery(query1, null);
+        c1.moveToFirst();
+        c1.close();
     }
 }
